@@ -6,7 +6,7 @@ image: Visual Studio 2017
 platform:
   - Any CPU
 install:
-  - cmd /c ""c:\Program Files\Microsoft SQL Server\140\Setup Bootstrap\SQL2017\setup.exe" /q /ACTION=Install /FEATURES=SQL_INST_MR /INSTANCENAME=MSSQLSERVER /IACCEPTSQLSERVERLICENSETERMS  /IACCEPTROPENLICENSETERMS"
+  - c:\"Program Files"\"Microsoft SQL Server"\140\"Setup Bootstrap"\SQL2017\setup.exe /qs /ACTION=Install /FEATURES=SQL_INST_MR /INSTANCENAME=MSSQLSERVER /IACCEPTSQLSERVERLICENSETERMS  /IACCEPTROPENLICENSETERMS
   #- cd c:\ && dir /s setup.exe
   #- nuget
   #- cmd: nuget restore  
