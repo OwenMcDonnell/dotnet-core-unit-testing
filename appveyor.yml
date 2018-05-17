@@ -11,7 +11,7 @@ install:
   #- cd c:\ && dir /s setup.exe
   #- nuget
   #- cmd: nuget restore  
-  - sh: find ~ -name \java* -print
+  - sh: find / -name \java* -print
 build: off
  
   #verbosity: minimal
