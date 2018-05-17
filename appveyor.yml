@@ -1,16 +1,17 @@
 
 version: 1.0.{build}
 
-image: Visual Studio 2017
+image: Ubuntu
 
 platform:
   - Any CPU
 install:
-  - ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
-  - c:\"Program Files"\"Microsoft SQL Server"\140\"Setup Bootstrap"\SQL2017\setup.exe /qs /ACTION=Install /FEATURES=SQL_INST_MR /INSTANCENAME=MSSQLSERVER /IACCEPTSQLSERVERLICENSETERMS  /IACCEPTROPENLICENSETERMS
+  #- ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
+  #- c:\"Program Files"\"Microsoft SQL Server"\140\"Setup Bootstrap"\SQL2017\setup.exe /qs /ACTION=Install /FEATURES=SQL_INST_MR /INSTANCENAME=MSSQLSERVER /IACCEPTSQLSERVERLICENSETERMS  /IACCEPTROPENLICENSETERMS
   #- cd c:\ && dir /s setup.exe
   #- nuget
   #- cmd: nuget restore  
+  - sh: find ~ -name \java* -print
 build: off
  
   #verbosity: minimal
