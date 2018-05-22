@@ -14,7 +14,7 @@ install:
   #- sh: find . -name \java* -print
   #- ps: get-wmiobject Win32_Product | Format-Table IdentifyingNumber, Name, LocalPackage -AutoSize
   - ps: cmake --version
-  - ps: choco upgrade cmake --version 3.10.1
+  - ps: msiexec.exe /x "C:\windows\Installer\f2d93b.msi" /QN
   - ps: cmake --version
 build: off
  
