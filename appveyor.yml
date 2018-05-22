@@ -14,7 +14,7 @@ install:
   #- sh: find . -name \java* -print
   #- ps: get-wmiobject Win32_Product | Format-Table IdentifyingNumber, Name, LocalPackage -AutoSize
   - ps: cmake --version
-  - ps: choco install cmake --version 3.10.1 --installargs 'ADD_CMAKE_TO_PATH=""User""'
+  - ps: choco install cmake --version 3.10.1 --installargs 'ADD_CMAKE_TO_PATH="System"'
   - ps: cmake --version
 build: off
  
