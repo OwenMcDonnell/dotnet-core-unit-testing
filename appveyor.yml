@@ -14,7 +14,7 @@ install:
   #- sh: find . -name \java* -print
   #- ps: get-wmiobject Win32_Product | Format-Table IdentifyingNumber, Name, LocalPackage -AutoSize
   - ps: cmake --version
-  - ps: - 
+  - ps: |
       $app = Get-WmiObject -Class Win32_Product -Filter "Name = 'cmake'"
       $app.Uninstall()
   - ps: cmake --version
