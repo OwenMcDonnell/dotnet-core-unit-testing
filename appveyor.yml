@@ -14,7 +14,7 @@ install:
   #- sh: find . -name \java* -print
   #- ps: get-wmiobject Win32_Product | Format-Table IdentifyingNumber, Name, LocalPackage -AutoSize
   - ps: cmake --version
-  - ps: msiexec.exe /x EB880D23-9D9C-4591-B4E9-F5F1D273C180
+  - ps: msiexec.exe /x "C:\windows\Installer\f2d93b.msi"
   - ps: cmake --version
 build: off
  
