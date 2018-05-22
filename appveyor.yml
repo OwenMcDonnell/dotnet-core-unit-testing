@@ -14,7 +14,9 @@ install:
   #- sh: find . -name \java* -print
   #- ps: get-wmiobject Win32_Product | Format-Table IdentifyingNumber, Name, LocalPackage -AutoSize
   - ps: cmake --version
-  - ps: msiexec.exe /x "C:\windows\Installer\f2d93b.msi" /QN
+  - ps: - 
+      $app = Get-WmiObject -Class Win32_Product -Filter "Name = 'cmake'"
+      $app.Uninstall()
   - ps: cmake --version
 build: off
  
