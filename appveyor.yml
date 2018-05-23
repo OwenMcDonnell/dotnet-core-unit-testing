@@ -9,7 +9,8 @@ init:
   #- sudo apt-get update
   #- sudo /opt/mssql/bin/mssql-conf set network.tcpport 1434
   
-  - sudo ufw allow 1433
+  #- sudo ufw allow 1433
+  - sudo /opt/mssql/bin/mssql-conf set sqlagent.enabled true
   - sudo systemctl start mssql-server
   - systemctl status mssql-server
   - sqlcmd -S localhost -U SA -P Password12\! -Q 'select @@VERSION'
