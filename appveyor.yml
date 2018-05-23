@@ -3,7 +3,10 @@ version: 1.0.{build}
 
 image: Ubuntu
 init:
-  - sudo add-apt-repository -r 'deb [arch=amd64] https://packages.microsoft.com/ubuntu/16.04/mssql-server xenial main' && sudo curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add - && sudo add-apt-repository "$(curl https://packages.microsoft.com/config/ubuntu/16.04/mssql-server-2017-gdr.list)" && sudo apt-get update
+  - sudo add-apt-repository -r 'deb [arch=amd64] https://packages.microsoft.com/ubuntu/16.04/mssql-server xenial main'
+  - sudo curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+  - sudo add-apt-repository "$(curl https://packages.microsoft.com/config/ubuntu/16.04/mssql-server-2017-gdr.list)"
+  - sudo apt-get update
   #- sudo /opt/mssql/bin/mssql-conf set network.tcpport 1434
   #- sudo systemctl restart mssql-server
   - sqlcmd -S localhost -U SA -P Password12! -Q 'select @@VERSION'
