@@ -1,8 +1,9 @@
 
 version: 1.0.{build}
 
-#image: Ubuntu
-
+image: Ubuntu
+init:
+  - sqlcmd -S localhost -U SA -P Password12! -Q 'select @@VERSION'
 platform:
   - Any CPU
 install:
@@ -13,14 +14,14 @@ install:
   #- cmd: nuget restore  
   #- sh: find . -name \java* -print
   #- ps: get-wmiobject Win32_Product | Format-Table IdentifyingNumber, Name, LocalPackage -AutoSize
-  - ps: cmake --version
-  - dir "C:/Program Files (x86)"
-  - ps: |
+  #- ps: cmake --version
+  #- dir "C:/Program Files (x86)"
+  #- ps: |
       $app = Get-WmiObject -Class Win32_Product -Filter "Name = 'cmake'"
       $app.Uninstall()
-  - ps: (New-Object System.Net.WebClient).DownloadFile("https://cmake.org/files/v3.10/cmake-3.10.3-win32-x86.msi", "C:\Windows\Temp\cmake.msi")
-  - ps: msiexec.exe /i C:\Windows\Temp\cmake.msi /qn | out-null
-  - ps: cmake --version
+  #- ps: (New-Object System.Net.WebClient).DownloadFile("https://cmake.org/files/v3.10/cmake-3.10.3-win32-x86.msi", "C:\Windows\Temp\cmake.msi")
+  #- ps: msiexec.exe /i C:\Windows\Temp\cmake.msi /qn | out-null
+  #- ps: cmake --version
 build: off
  
   #verbosity: minimal
