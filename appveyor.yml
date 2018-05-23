@@ -12,8 +12,9 @@ init:
   #- sudo ufw allow 1433
   - sudo /opt/mssql/bin/mssql-conf set sqlagent.enabled true
   - sudo systemctl restart mssql-server
-  - systemctl status mssql-server
   - journalctl -u mssql-server.service -b
+  - systemctl status mssql-server
+  
   - sqlcmd -S localhost -U SA -P Password12\! -Q 'select @@VERSION'
 platform:
   - Any CPU
