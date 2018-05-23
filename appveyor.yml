@@ -3,6 +3,8 @@ version: 1.0.{build}
 
 image: Ubuntu
 init:
+  - sudo /opt/mssql/bin/mssql-conf set network.tcpport 1433
+  - sudo systemctl restart mssql-server
   - sqlcmd -S localhost,1433 -U SA -P Password12! -Q 'select @@VERSION'
 platform:
   - Any CPU
