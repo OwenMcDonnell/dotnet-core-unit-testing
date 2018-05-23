@@ -3,7 +3,7 @@ version: 1.0.{build}
 
 image: Ubuntu
 init:
-  - sqlcmd -S localhost -U SA -P Password12! -Q 'select @@VERSION'
+  - sqlcmd -U SA -P Password12! -Q 'select @@VERSION'
 platform:
   - Any CPU
 install:
