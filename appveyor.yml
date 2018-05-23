@@ -10,6 +10,7 @@ init:
   #- sudo /opt/mssql/bin/mssql-conf set network.tcpport 1434
   
   #- sudo ufw allow 1433
+  - sudo cat /var/opt/mssql/log/errorlog
   - sudo /opt/mssql/bin/mssql-conf set sqlagent.enabled true
   - sudo systemctl restart mssql-server
   - journalctl -u mssql-server.service -b
