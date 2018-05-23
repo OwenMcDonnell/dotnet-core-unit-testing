@@ -8,7 +8,7 @@ init:
   #- sudo add-apt-repository "$(curl https://packages.microsoft.com/config/ubuntu/16.04/mssql-server-2017-gdr.list)"
   #- sudo apt-get update
   #- sudo /opt/mssql/bin/mssql-conf set network.tcpport 1434
-  #- sudo systemctl restart mssql-server
+  - sudo systemctl restart mssql-server
   - systemctl status mssql-server
   - sqlcmd -S localhost -U SA -P Password12\! -Q 'select @@VERSION'
 platform:
