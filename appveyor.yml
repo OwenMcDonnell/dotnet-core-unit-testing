@@ -9,6 +9,7 @@ init:
   #- sudo apt-get update
   #- sudo /opt/mssql/bin/mssql-conf set network.tcpport 1434
   #- sudo systemctl restart mssql-server
+  - systemctl status mssql-server
   - sqlcmd -S localhost -U SA -P Password12\! -Q 'select @@VERSION'
 platform:
   - Any CPU
