@@ -41,7 +41,7 @@ build: off
 deploy:
   provider: GitHub
   auth_token: 
-    secure: Ca5SLGc+KYFhBJDeGIZSXRPS9i0O4oxn+R26ihi7MMrIx25kZD3dApBtLIESSyTr
+    secure: QPxy/c9k6ZRhAVCgjKWWDxJTL2RPZjHMQ2gfMqdUkU3+pxUkn1DEebu0DUvrsHAP
   tag: v$(APPVEYOR_BUILD_VERSION)
   release: unp4k Tools for Star Citizen
   description: 'test'
