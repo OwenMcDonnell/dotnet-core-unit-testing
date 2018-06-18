@@ -40,7 +40,8 @@ build: off
   #verbosity: minimal
 deploy:
   provider: GitHub
-  auth_token: 192f7d361b1863e153e1988bab0adccc60c9072c
+  auth_token: 
+    secure: Ca5SLGc+KYFhBJDeGIZSXRPS9i0O4oxn+R26ihi7MMrIx25kZD3dApBtLIESSyTr
   tag: v$(APPVEYOR_BUILD_VERSION)
   release: unp4k Tools for Star Citizen
   description: 'test'
