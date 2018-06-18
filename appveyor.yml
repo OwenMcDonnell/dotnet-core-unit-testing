@@ -1,6 +1,6 @@
 
 version: 1.0.{build}
-
+skip_tags: true
 #image: Ubuntu
 init:
   - ps: $readme = Get-content ./README.md -raw
