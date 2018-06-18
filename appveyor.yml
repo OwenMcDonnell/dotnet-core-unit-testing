@@ -3,6 +3,7 @@ version: 1.0.{build}
 skip_tags: true
 #image: Ubuntu
 init:
+  - dir
   - ps: $readme = Get-content ./README.md -raw
   #- sudo add-apt-repository -r 'deb [arch=amd64] https://packages.microsoft.com/ubuntu/16.04/mssql-server xenial main'
   #- sudo curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
