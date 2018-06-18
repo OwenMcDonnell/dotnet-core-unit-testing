@@ -2,9 +2,7 @@
 version: 1.0.{build}
 skip_tags: true
 #image: Ubuntu
-init:
-  - dir
-  - ps: $readme = Get-content ./README.md -raw
+#init:
   #- sudo add-apt-repository -r 'deb [arch=amd64] https://packages.microsoft.com/ubuntu/16.04/mssql-server xenial main'
   #- sudo curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
   #- sudo add-apt-repository "$(curl https://packages.microsoft.com/config/ubuntu/16.04/mssql-server-2017-gdr.list)"
@@ -22,6 +20,7 @@ init:
 platform:
   - Any CPU
 install:
+  - ps: $readme = Get-content ./README.md -raw
   #- ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
   #- c:\"Program Files"\"Microsoft SQL Server"\140\"Setup Bootstrap"\SQL2017\setup.exe /qs /ACTION=Install /FEATURES=SQL_INST_MR /INSTANCENAME=MSSQLSERVER /IACCEPTSQLSERVERLICENSETERMS  /IACCEPTROPENLICENSETERMS
   #- cd c:\ && dir /s setup.exe
