@@ -43,5 +43,5 @@ deploy:
   auth_token: 
     secure: QPxy/c9k6ZRhAVCgjKWWDxJTL2RPZjHMQ2gfMqdUkU3+pxUkn1DEebu0DUvrsHAP
   tag: v$(APPVEYOR_BUILD_VERSION)
-  release: unp4k Tools for Star Citizen
-  description: 'test'
+  release: test release
+  description: Get-content README.md
