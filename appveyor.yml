@@ -24,7 +24,7 @@ install:
   #- c:\"Program Files"\"Microsoft SQL Server"\140\"Setup Bootstrap"\SQL2017\setup.exe /qs /ACTION=Install /FEATURES=SQL_INST_MR /INSTANCENAME=MSSQLSERVER /IACCEPTSQLSERVERLICENSETERMS  /IACCEPTROPENLICENSETERMS
   #- cd c:\ && dir /s setup.exe
   #- nuget
-  #- cmd: nuget restore  
+  - cmd: nuget restore  
   #- sh: find . -name \java* -print
   #- ps: get-wmiobject Win32_Product | Format-Table IdentifyingNumber, Name, LocalPackage -AutoSize
   #- ps: cmake --version
