@@ -1,8 +1,8 @@
 
 version: 1.0.{build}
 
-image: Ubuntu
-init:
+#image: Ubuntu
+#init:
   #- sudo add-apt-repository -r 'deb [arch=amd64] https://packages.microsoft.com/ubuntu/16.04/mssql-server xenial main'
   #- sudo curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
   #- sudo add-apt-repository "$(curl https://packages.microsoft.com/config/ubuntu/16.04/mssql-server-2017-gdr.list)"
@@ -10,13 +10,13 @@ init:
   #- sudo /opt/mssql/bin/mssql-conf set network.tcpport 1434
   
   #- sudo ufw allow 1433
-  - sudo cat /var/opt/mssql/log/errorlog
-  - sudo /opt/mssql/bin/mssql-conf set sqlagent.enabled true
-  - sudo systemctl restart mssql-server
-  - journalctl -u mssql-server.service -b
-  - systemctl status mssql-server
+ # - sudo cat /var/opt/mssql/log/errorlog
+  #- sudo /opt/mssql/bin/mssql-conf set sqlagent.enabled true
+  #- sudo systemctl restart mssql-server
+  #- journalctl -u mssql-server.service -b
+  #- systemctl status mssql-server
   
-  - sqlcmd -S localhost -U SA -P Password12\! -Q 'select @@VERSION'
+  #- sqlcmd -S localhost -U SA -P Password12\! -Q 'select @@VERSION'
 platform:
   - Any CPU
 install:
@@ -30,11 +30,19 @@ install:
   #- ps: cmake --version
   #- dir "C:/Program Files (x86)"
   #- ps: |
-      $app = Get-WmiObject -Class Win32_Product -Filter "Name = 'cmake'"
-      $app.Uninstall()
+  #    $app = Get-WmiObject -Class Win32_Product -Filter "Name = 'cmake'"
+   #   $app.Uninstall()
   #- ps: (New-Object System.Net.WebClient).DownloadFile("https://cmake.org/files/v3.10/cmake-3.10.3-win32-x86.msi", "C:\Windows\Temp\cmake.msi")
   #- ps: msiexec.exe /i C:\Windows\Temp\cmake.msi /qn | out-null
   #- ps: cmake --version
 build: off
- 
+
   #verbosity: minimal
+deploy:
+  provider: GitHub
+  auth_token: 7f3896e5f90677dae58ec8bfab967df6b7016882
+  draft: false
+  prerelease: false
+  tag: v$(APPVEYOR_BUILD_VERSION)
+  release: unp4k Tools for Star Citizen
+  description: test
