@@ -40,7 +40,7 @@ build: off
   #verbosity: minimal
 deploy:
   provider: GitHub
-  auth_token: 7f3896e5f90677dae58ec8bfab967df6b7016882
+  auth_token: c1bc129e34c0bbcdb93a0bdf66ef017f9d00be42
   draft: false
   prerelease: false
   tag: v$(APPVEYOR_BUILD_VERSION)
